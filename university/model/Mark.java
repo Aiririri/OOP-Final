@@ -8,14 +8,27 @@ public class Mark {
         if (att1 < 0 || att1 > 30)           throw new IllegalArgumentException("ATT1 must be 0-30");
         if (att2 < 0 || att2 > 30)           throw new IllegalArgumentException("ATT2 must be 0-30");
         if (finalExam < 0 || finalExam > 40) throw new IllegalArgumentException("Final must be 0-40");
-        this.att1 = att1; this.att2 = att2; this.finalExam = finalExam; this.teacher = teacher;
+        this.att1 = att1; 
+        this.att2 = att2; 
+        this.finalExam = finalExam; 
+        this.teacher = teacher;
     }
 
-    public double getAtt1()      { return att1; }
-    public double getAtt2()      { return att2; }
-    public double getFinalExam() { return finalExam; }
-    public double getTotal()     { return att1 + att2 + finalExam; }
-    public boolean passed()      { return getTotal() >= 50; }
+    public double getAtt1() { 
+        return att1; 
+    }
+    public double getAtt2() { 
+        return att2; 
+    }
+    public double getFinalExam() { 
+        return finalExam; 
+    }
+    public double getTotal() { 
+        return att1 + att2 + finalExam; 
+    }
+    public boolean passed() { 
+        return getTotal() >= 50; 
+    }
 
     public double toGradePoint() {
         double t = getTotal();
