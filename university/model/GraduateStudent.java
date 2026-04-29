@@ -2,7 +2,6 @@ package university.model;
 
 import university.enums.Faculty;
 import university.exception.LowHIndexException;
-
 import java.util.*;
 
 public class GraduateStudent extends Student implements Researcher {
@@ -22,11 +21,16 @@ public class GraduateStudent extends Student implements Researcher {
         this.supervisor = sup;
     }
 
-    public Researcher getSupervisor() { return supervisor; }
+    public Researcher getSupervisor() { 
+        return supervisor; 
+    }
 
-    @Override public List<ResearchPaper> getPapers() { return Collections.unmodifiableList(papers); }
-    @Override public void addPaper(ResearchPaper p)  { papers.add(p); }
-
+    @Override public List<ResearchPaper> getPapers() { 
+        return Collections.unmodifiableList(papers); 
+    }
+    @Override public void addPaper(ResearchPaper p)  { 
+        papers.add(p); 
+    }
     @Override public String getRole() {
         return "Graduate Student (h-index: " + getHIndex() + ")";
     }
