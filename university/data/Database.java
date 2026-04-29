@@ -43,7 +43,7 @@ public class Database {
         Admin admin = new Admin("System", "Admin", "admin@uni.edu", "admin");
         users.add(admin);
         Professor prof = new Professor("Aisha", "Bekova", "bekova@uni.edu", "pass",
-                Faculty.COMPUTER_SCIENCE, 350_000);
+                School.COMPUTER_SCIENCE, 350_000);
         prof.addPaper(new ResearchPaper("Deep Learning for Kazakh NLP",   "Bekova", "IEEE",    47));
         prof.addPaper(new ResearchPaper("Transformers for Low-Resource",   "Bekova", "ACL",     89));
         prof.addPaper(new ResearchPaper("Federated Learning at the Edge",  "Bekova", "IoT J.",  34));
@@ -51,23 +51,23 @@ public class Database {
         users.add(prof);
 
         Teacher t = new Teacher("Dauren", "Seitkali", "seitkali@uni.edu", "pass",
-                Faculty.COMPUTER_SCIENCE, 250_000, TeacherTitle.SENIOR_LECTOR);
+                School.COMPUTER_SCIENCE, 250_000, TeacherTitle.SENIOR_LECTOR);
         users.add(t);
 
         Manager mgr = new Manager("Nursultan", "Abenov", "abenov@uni.edu", "pass",
-                Faculty.COMPUTER_SCIENCE, ManagerType.OFFICE_REGISTRAR);
+                School.COMPUTER_SCIENCE, ManagerType.OFFICE_REGISTRAR);
         users.add(mgr);
 
-        Student s1 = new Student("Arman",  "Ospanov", "ospanov@uni.edu", "pass", Faculty.COMPUTER_SCIENCE, 2);
-        Student s2 = new Student("Zarina", "Akhmet",  "akhmet@uni.edu",  "pass", Faculty.ENGINEERING,      1);
-        GraduateStudent gs = new GraduateStudent("Dinara", "Kenzhe", "kenzhe@uni.edu", "pass", Faculty.COMPUTER_SCIENCE);
+        Student s1 = new Student("Arman",  "Ospanov", "ospanov@uni.edu", "pass", School.COMPUTER_SCIENCE, 2);
+        Student s2 = new Student("Zarina", "Akhmet",  "akhmet@uni.edu",  "pass", School.ENGINEERING,      1);
+        GraduateStudent gs = new GraduateStudent("Dinara", "Kenzhe", "kenzhe@uni.edu", "pass", School.COMPUTER_SCIENCE);
         gs.addPaper(new ResearchPaper("Kazakh Sentiment Analysis", "Kenzhe", "IEEE Access", 5));
         try { gs.setSupervisor(prof); } catch (Exception ignored) {}
         users.add(s1); users.add(s2); users.add(gs);
 
-        Course oop  = new Course("Object-Oriented Programming", 6, Faculty.COMPUTER_SCIENCE);
-        Course algo = new Course("Algorithms & Data Structures", 5, Faculty.COMPUTER_SCIENCE);
-        Course math = new Course("Discrete Mathematics",         4, Faculty.COMPUTER_SCIENCE);
+        Course oop  = new Course("Object-Oriented Programming", 6, School.COMPUTER_SCIENCE);
+        Course algo = new Course("Algorithms & Data Structures", 5, School.COMPUTER_SCIENCE);
+        Course math = new Course("Discrete Mathematics",         4, School.COMPUTER_SCIENCE);
 
         oop.addLesson(new university.model.Lesson(LessonType.LECTURE,  "Monday",    "09:00", "A101"));
         oop.addLesson(new university.model.Lesson(LessonType.PRACTICE, "Wednesday", "11:00", "Lab3"));
