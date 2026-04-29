@@ -13,4 +13,10 @@ public class Professor extends Teacher implements Researcher {
         super(fn, ln, email, pw, faculty, salary, TeacherTitle.PROFESSOR);
     }
 
-   
+    @Override public List<ResearchPaper> getPapers() { return Collections.unmodifiableList(papers); }
+    @Override public void addPaper(ResearchPaper p)  { papers.add(p); }
+
+    @Override public String getRole() {
+        return "Professor (h-index: " + getHIndex() + ")";
+    }
+}
