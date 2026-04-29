@@ -1,12 +1,9 @@
 package university.model;
-
 import university.enums.Faculty;
-
 import java.util.*;
 
 public class Course {
     private static int nextId = 1;
-
     private final String  courseId;
     private String  name;
     private int     credits;
@@ -21,10 +18,14 @@ public class Course {
         this.name = name; this.credits = credits; this.faculty = faculty;
     }
 
-    public void unenroll(Student s) { enrolled.remove(s); }
+    public void unenroll(Student s) { 
+        enrolled.remove(s); 
+    }
 
     public boolean enroll(Student s) {
-        if (!enrolled.contains(s)) { enrolled.add(s); return true; }
+        if (!enrolled.contains(s)) { 
+            enrolled.add(s); return true; 
+        }
         return false;
     }
 
@@ -46,7 +47,9 @@ public class Course {
     @Override public boolean equals(Object o) {
         return o instanceof Course c && courseId.equals(c.courseId);
     }
-    @Override public int hashCode() { return courseId.hashCode(); }
+    @Override public int hashCode() { 
+        return courseId.hashCode(); 
+    }
 
     @Override public String toString() {
         String t = teacher != null ? teacher.getFullName() : "TBA";
