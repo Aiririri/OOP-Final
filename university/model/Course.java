@@ -9,7 +9,7 @@ public class Course {
     private int     credits;
     private Faculty faculty;
     private boolean open = false;
-    private Teacher teacher;
+    private final List<Teacher> teachers = new ArrayList<>();
     private final List<Lesson>  lessons  = new ArrayList<>();
     private final List<Student> enrolled = new ArrayList<>();
 
