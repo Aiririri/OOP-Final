@@ -2,7 +2,6 @@ package university.model;
 
 import university.enums.Faculty;
 import university.enums.ManagerType;
-
 import java.util.*;
 
 public class Manager extends User {
@@ -20,10 +19,16 @@ public class Manager extends User {
         news.add(headline);
     }
 
-    public List<String> getNews() { return Collections.unmodifiableList(news); }
-
-    public ManagerType getType()     { return type; }
-    public Faculty     getFaculty()  { return faculty; }
-
-    @Override public String getRole() { return "Manager (" + type + ")"; }
+    public List<String> getNews() { 
+        return Collections.unmodifiableList(news); 
+    }
+    public ManagerType getType()     { 
+        return type; 
+    }
+    public Faculty     getFaculty()  { 
+        return faculty; 
+    }
+    @Override public String getRole() { 
+        return "Manager (" + type + ")"; 
+    }
 }
